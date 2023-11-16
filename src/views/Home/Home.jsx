@@ -19,15 +19,21 @@ function Home(){
     const from = searchParams.get("from");
 
     const greetingNumber= searchParams.get("g") >= GREETINGS.length ? 0 : searchParams.get("g") || 0 ;
+
+    const themeNumber = searchParams.get("t")
     return(
-        <div className="card-container">
+        <div>
+             <div className={`card-container ${`them-${themeNumber}`}`}>
             <span>Dear {to} 💐</span>
             <p>
                 {GREETINGS[greetingNumber]}
             </p>
+            <br />
+            <br />
+            <br />
             <span className="form-text">🙏 एकी अपनी {from}</span>
+            </div>
         </div>
-
     )
 }
 export default Home;
